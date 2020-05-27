@@ -21,6 +21,9 @@ import Swal from 'sweetalert2';
 export class PrestamosComponent implements OnInit {
 
   prestamos: Prestamo[] = [];
+  sector:string;
+  totalSector:number=0;
+  totalPrestamos:number=0
 
   constructor(private service: BibliotecaServices) {}
 
@@ -29,6 +32,9 @@ export class PrestamosComponent implements OnInit {
       res.forEach(prestamo => {
         this.prestamos.push(prestamo)
       })
+    })
+    this.service.cantidadLibrosPrestados().subscribe(res=>{
+      this.totalPrestamos = res
     })
   }
 
@@ -48,6 +54,13 @@ export class PrestamosComponent implements OnInit {
     var date2_ms = hoy.getTime();
     var difference_ms = Math.abs(date1_ms - date2_ms);
     return Math.round(difference_ms / UN_DIA);
+  }
+
+  cantidadSector(){
+    this.service.cantidadLibrosPrestadosSector(this.sector).subscribe(res=>{
+      this.totalSector = res
+      console.log(res)
+    })
   }
 
 }

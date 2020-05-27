@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="container my-5"
-    style="padding:20px;background-color: white;border-radius: 15px;">
+    style="padding:20px;">
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -33,6 +33,24 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <div class="col-7">
+          <div class="input-group mb-3">
+            <input [(ngModel)]="sector" type="text" class="form-control" placeholder="sector por el cual buscar"  aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button (click)="cantidadSector()" class="btn btn-outline-secondary" type="button">Buscar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <h6>{{totalSector}} prestados</h6>
+        </div>
+      </div>
+      <div class="col-4">
+          <h6>total de prestados : {{totalPrestamos}}</h6>
+      </div>
     </div>
   </div>
 </div>

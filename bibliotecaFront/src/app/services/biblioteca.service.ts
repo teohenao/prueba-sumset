@@ -62,8 +62,13 @@ export class BibliotecaServices {
  }
 
  cantidadLibrosPrestados():Observable<number>{
-  return this.http.get<number>(this.urlEndPoint)
+  return this.http.get<number>(this.urlEndPoint+'/prestamos/cantidad')
  }
+
+ cantidadLibrosPrestadosSector(sector:String):Observable<number>{
+  return this.http.get<number>(this.urlEndPoint+'/prestamos/cantidad/'+sector)
+ }
+
 
 
 
