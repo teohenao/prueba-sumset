@@ -1,0 +1,19 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.PrePersist;
+
+public class Prestamo {
+
+	@Column(name="fecha_prestamo")
+	private Date fechaPrestamo;
+	
+	
+	@PrePersist
+	public void preGuardar()
+	{
+		this.fechaPrestamo = new Date();
+	}
+}

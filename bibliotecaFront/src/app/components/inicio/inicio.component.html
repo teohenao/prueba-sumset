@@ -1,0 +1,18 @@
+<div class="card-deck">
+    <div id="card" class="col-sm-6 col-lg-3 col-md-6 mb-6" *ngFor="let libro of libros">
+        <div class="card">
+            <img src="{{libro.foto}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{libro.nombre}}</h5>
+              <p class="card-text">{{libro.descripcion}}</p>
+              <h5>edad necesaria :</h5>
+              <h6 *ngIf="libro.edadNecesaria">{{libro.edadNecesaria}}</h6>
+              <button *ngIf="libro.disponibilidad" class="btn btn-block btn-success" (click)="solicitarLibro(libro)">solicitar libro</button>
+            </div>
+            <div class="card-footer">
+              <small *ngIf="!libro.disponibilidad" class="text-muted">No disponible</small>
+              <small *ngIf="libro.disponibilidad" class="text-muted">disponible</small>
+            </div>
+          </div>
+      </div>  
+</div>

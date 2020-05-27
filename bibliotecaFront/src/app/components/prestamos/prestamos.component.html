@@ -1,0 +1,38 @@
+<div class="contenedor" style="padding-top: 100px;">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>PRESTAMOS</h1>
+    </div>
+  </div>
+  <div class="container my-5"
+    style="padding:20px;background-color: white;border-radius: 15px;">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id prestamo</th>
+            <th scope="col">fecha</th>
+            <th scope="col">nombre libro</th>
+            <th scope="col">usuario</th>
+            <th scope="col">estado</th>
+            <th scope="col">sector</th>
+            <th scope="col">dias prestado</th>
+            <th scope="col">devolver</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prestamo of prestamos,let i = index" >
+            <td *ngIf="prestamo.estado">{{prestamo.id}}</td>
+            <td *ngIf="prestamo.estado">{{prestamo.fechaPrestamo| date: 'dd/MM/yyyy'}}</td>
+            <td *ngIf="prestamo.estado">{{prestamo.libros[0].nombre}}</td>
+            <td *ngIf="prestamo.estado">{{prestamo.usuario.nombres}}</td>
+            <td *ngIf="prestamo.estado">prestamo activo</td>
+            <td *ngIf="prestamo.estado">{{prestamo.usuario.sector}}</td>
+            <td *ngIf="prestamo.estado">{{diasEntre(prestamo.fechaPrestamo)}}</td>
+            <td *ngIf="prestamo.estado"><button (click)="devolverLibro(prestamo)" class="btn btn-success btn-sm">devolver libro</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

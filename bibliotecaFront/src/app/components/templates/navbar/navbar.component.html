@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">biblioteca municipal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/inicio">Inicio</a>
+      </li>
+      <li  *ngIf="service.usuario" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/prestamos">Prestamos</a>
+      </li>
+      <li  *ngIf="service.usuario" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/crear-libro">agregar libro</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button *ngIf="service.usuario" (click)="service.cerrarSesion()" class="btn btn-outline-danger my-2 my-sm-0" type="submit">cerrar sesion</button>
+      <button *ngIf="!service.usuario" routerLink="/inicio-sesion" class="btn btn-outline-success my-2 my-sm-0" type="submit">inicio sesion</button>
+    </form>
+  </div>
+</nav>

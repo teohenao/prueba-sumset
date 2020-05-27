@@ -1,0 +1,78 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "prestamos")
+public class Prestamo implements Serializable{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	@Column(name="fecha_prestamo")
+	@Temporal(TemporalType.DATE)
+	private Date fechaPrestamo;
+	
+	private String sector;
+	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties(value={"prestamos","hibernateLazyInitializer","handler"},allowSetters = true)
+	private Usuario usuario;
+	
+	@PrePersist
+	public void preGuardar()
+	{
+		this.fechaPrestamo = new Date();
+	}
+
+
+	public Date getFechaPrestamo() {
+		return fechaPrestamo;
+	}
+
+
+	public void setFechaPrestamo(Date fechaPrestamo) {
+		this.fechaPrestamo = fechaPrestamo;
+	}
+	
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getSector() {
+		return sector;
+	}
+
+
+	public void setSector(String sector) {
+		this.sector = sector;
+	}
+
+
+	private static final long serialVersionUID = 1L;
+	
+}

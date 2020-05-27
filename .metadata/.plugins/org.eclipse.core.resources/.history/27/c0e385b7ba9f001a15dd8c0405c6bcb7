@@ -1,0 +1,29 @@
+package com.sumset.biblioteca.modelos.implementaciones;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.sumset.biblioteca.modelos.dao.IUsuarioDao;
+import com.sumset.biblioteca.modelos.entidades.Usuario;
+import com.sumset.biblioteca.modelos.servicios.IUsuarioServices;
+
+@Service
+public class UsuarioServicesImplement implements IUsuarioServices {
+  
+	@Autowired
+	private IUsuarioDao usuarioDao;
+	
+	@Override
+	@Transactional
+	public Usuario save(Usuario usuario) {
+		return usuarioDao.save(usuario);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Usuario findByClaveAndIdentificacion(String identificacion, String clave) {
+		return usuarioDao.findByClaveAndIdentificacion(identificacion, clave);
+	}
+	
+}

@@ -1,0 +1,21 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+import java.io.Serializable;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Libro implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	
+	
+	
+	
+	private static final long serialVersionUID = 1L;
+
+}

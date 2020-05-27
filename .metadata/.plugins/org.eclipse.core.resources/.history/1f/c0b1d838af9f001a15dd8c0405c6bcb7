@@ -1,0 +1,20 @@
+package com.sumset.biblioteca.modelos.implementaciones;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.sumset.biblioteca.modelos.dao.IUsuarioDao;
+import com.sumset.biblioteca.modelos.entidades.Usuario;
+import com.sumset.biblioteca.modelos.servicios.IUsuarioServices;
+
+public class UsuarioServicesImplement implements IUsuarioServices {
+  
+	@Autowired
+	private IUsuarioDao usuarioDao;
+	
+	@Override
+	@Transactional
+	public Usuario save(Usuario usuario) {
+		return usuarioDao.save(usuario);
+	}
+}

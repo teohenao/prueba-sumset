@@ -1,0 +1,44 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "prestamos")
+public class Prestamo implements Serializable{
+
+
+	@Column(name="fecha_prestamo")
+	@Temporal(TemporalType.DATE)
+	private Date fechaPrestamo;
+	
+	
+	@PrePersist
+	public void preGuardar()
+	{
+		this.fechaPrestamo = new Date();
+	}
+
+
+	public Date getFechaPrestamo() {
+		return fechaPrestamo;
+	}
+
+
+	public void setFechaPrestamo(Date fechaPrestamo) {
+		this.fechaPrestamo = fechaPrestamo;
+	}
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+}

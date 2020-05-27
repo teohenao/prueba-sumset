@@ -1,0 +1,27 @@
+<div class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="padding-top: 5%;">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">inicio sesion</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="exampleInputPassword1">Identificacion</label>
+                <input type="text" name="identificacion" [(ngModel)]="credenciales.identificacion" class="form-control"
+                placeholder="Ingrese el nombre del libro">
+              </div>
+              <div class="form-label-group">
+                <label for="exampleInputPassword1">Clave</label>
+                <input type="password" name="clave" [(ngModel)]="credenciales.clave" class="form-control" placeholder="Ingrese su clave">
+              </div>
+              <hr class="my-4">
+              <button id="buttonL" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"
+                (click)="login()">iniciar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

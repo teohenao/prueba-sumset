@@ -1,0 +1,12 @@
+package com.sumset.biblioteca.modelos.implementaciones;
+
+import org.springframework.stereotype.Service;
+
+import com.sumset.biblioteca.modelos.servicios.IPrestamoServices;
+
+@Service
+public class PrestamoServicesImplement implements IPrestamoServices{
+	
+	
+
+}

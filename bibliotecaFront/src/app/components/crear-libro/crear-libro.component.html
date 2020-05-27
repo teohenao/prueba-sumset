@@ -1,0 +1,44 @@
+<div class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="padding-top: 5%;">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">INGRESO DE LIBRO NUEVO</h5>
+            <div class="form-label-group">
+              <label>nombre</label>
+              <input type="text" [(ngModel)]="libro.nombre" class="form-control"
+                placeholder="Ingrese el nombre del libro">
+            </div>
+            <div class="form-label-group">
+              <label>autor</label>
+              <input type="text" [(ngModel)]="libro.autor" class="form-control" placeholder="Ingrese el autor">
+            </div>
+            <div class="form-label-group">
+              <label>descripcion</label>
+              <input type="text" [(ngModel)]="libro.descripcion" class="form-control"
+                placeholder="Ingrese la descripcion">
+            </div>
+            <div class="form-label-group">
+              <label>foto de portada</label>
+              <input type="text" [(ngModel)]="libro.foto" class="form-control"
+                placeholder="Ingrese una foto de portada">
+            </div>
+            <div class="form-label-group">
+              <label>edad requerida</label>
+              <select class="browser-default custom-select" [(ngModel)]="opcionSeleccionado">
+                <option selected value="0">niño</option>
+                <option value="1">adolescente</option>
+                <option value="2">adulto</option>
+                <option value="3">adulto mayor</option>
+              </select>
+            </div>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="registro()">registrar
+              libro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

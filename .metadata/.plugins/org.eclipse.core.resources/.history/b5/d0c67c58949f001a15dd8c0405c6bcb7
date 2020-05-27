@@ -1,0 +1,5 @@
+package com.sumset.biblioteca.modelos.servicios;
+
+public interface IPrestamoServices {
+
+}

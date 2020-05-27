@@ -1,0 +1,33 @@
+package com.sumset.biblioteca.modelos.implementaciones;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sumset.biblioteca.modelos.dao.ILibroDao;
+import com.sumset.biblioteca.modelos.entidades.Libro;
+import com.sumset.biblioteca.modelos.servicios.ILibroServices;
+
+@Service
+public class LibroServicesImplement implements ILibroServices {
+
+	@Autowired
+	private ILibroDao libroDao;
+	
+	@Override
+	@Transactional
+	public Libro save(Libro libro) {
+		return libroDao.save(libro);
+	}
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Libro findById(Long id) {
+		return libroDao.findById(id).orElse(null);
+	}
+
+
+	
+}

@@ -1,0 +1,5 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+public class ItemPrestamo {
+
+}

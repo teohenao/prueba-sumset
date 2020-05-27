@@ -1,0 +1,144 @@
+package com.sumset.biblioteca.modelos.entidades;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
+@Entity
+@Table(name="libros")
+public class Libro implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@NotEmpty(message = "nombre no puede estar vacio")
+	@Size(min = 5,max = 20)
+	@Column(nullable = false)
+	private String nombre;
+	
+	@NotEmpty(message = "autor no puede estar vacio")
+	@Size(min = 5,max = 20)
+	@Column(nullable = false)
+	private String autor;
+	
+	@Column(nullable = false)
+	private Boolean dispnibilidad;
+	
+	@Column(nullable = false)
+	private Integer edadDesde;
+	
+	@Column(nullable = false)
+	private Integer edadHasta;
+	
+	@NotEmpty(message = "descripcion no puede estar vacio")
+	@Size(min = 5,max = 250)
+	@Column(nullable = false)
+	private String descripcion;
+	
+	@Column(name = "foto")
+	private String urlFoto;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties(value={"libros","hibernateLazyInitializer","handler"},allowSetters = true)
+	private Prestamo prestamo;
+	
+	public Libro() {
+		super();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public Boolean getDispnibilidad() {
+		return dispnibilidad;
+	}
+
+	public void setDispnibilidad(Boolean dispnibilidad) {
+		this.dispnibilidad = dispnibilidad;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+
+
+
+	public Integer getEdadDesde() {
+		return edadDesde;
+	}
+
+	public void setEdadDesde(Integer edadDesde) {
+		this.edadDesde = edadDesde;
+	}
+
+	public Integer getEdadHasta() {
+		return edadHasta;
+	}
+
+	public void setEdadHasta(Integer edadHasta) {
+		this.edadHasta = edadHasta;
+	}
+
+	public Prestamo getPrestamo() {
+		return prestamo;
+	}
+
+	public void setPrestamo(Prestamo prestamo) {
+		this.prestamo = prestamo;
+	}
+
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
+	}
+
+
+
+	private static final long serialVersionUID = 1L;
+
+}
