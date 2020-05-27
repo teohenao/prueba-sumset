@@ -24,14 +24,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sumset.biblioteca.modelos.entidades.Usuario;
 import com.sumset.biblioteca.modelos.servicios.IUsuarioServices;
 
+
+/**
+ * servicio Rest que hace uso de los repositorios para  los usuarios
+ * @author Mateo Henao
+ */
 @CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/biblioteca")
 public class UsuarioRESTController {
 
+	//inyectamos los servicios del usuario
 	@Autowired
 	private IUsuarioServices usuarioServicio;
 	
+    /**
+     * Metodo POST para realizar el registro de un usuario
+     * @param usuario
+     * @param result
+     */
 	@PostMapping("/usuarios")
 	public ResponseEntity<?> agregarUsuario(@Valid @RequestBody Usuario usuario,BindingResult result)
 	{
@@ -54,12 +65,17 @@ public class UsuarioRESTController {
 			response.put("mensaje", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		response.put("mensaje", "publicacion creado con exito");
-		response.put("recomendacion", nuevoUsuario);
+		response.put("mensaje", "usuario creado con exito");
+		response.put("usuario", nuevoUsuario);
 		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.CREATED);
 	}
 	
 	
+	/**
+     * Metodo GET para  loggear usuario por medio de la identificacion y la clave
+     * @param identificacion
+     * @param clave
+     */
 	@GetMapping("/usuarios/{identificacion}/{clave}")
 	@ResponseStatus(HttpStatus.OK) 
 	public ResponseEntity<?> loginUsuario(@PathVariable String identificacion,@PathVariable String clave)

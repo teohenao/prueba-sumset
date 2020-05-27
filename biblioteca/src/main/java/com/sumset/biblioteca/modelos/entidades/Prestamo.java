@@ -3,7 +3,6 @@ package com.sumset.biblioteca.modelos.entidades;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,9 +15,12 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Entidad que representa un Prestamo de libros en la base de datos
+ * @author Mateo Henao
+ */
 @Entity
 @Table(name = "prestamos")
 public class Prestamo implements Serializable{
@@ -37,13 +39,23 @@ public class Prestamo implements Serializable{
 	@Column(name = "estado")
 	private Boolean estado;
 	
+	/**
+	 * Relacion con la entidad usuario
+	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnoreProperties(value={"prestamos","hibernateLazyInitializer","handler"},allowSetters = true)
 	private Usuario usuario;
 	
+	/**
+	 * Relacion uno a muchos con la entidad libros
+	 */
 	@OneToMany(fetch = FetchType.LAZY,mappedBy = "prestamo")
 	private List<Libro> libros;
 	
+	
+	/**
+	 * Metodo prePersist para que se guarde la fecha automaticamente al generar un nuevo prestamo
+	 */
 	@PrePersist
 	public void preGuardar()
 	{

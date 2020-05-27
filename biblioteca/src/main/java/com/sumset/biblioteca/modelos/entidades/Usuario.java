@@ -18,6 +18,10 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * Entidad que representa un usuario en la base de datos
+ * @author Mateo Henao
+ */
 @Entity
 @Table(name="usuarios")
 public class Usuario implements Serializable{
@@ -53,81 +57,66 @@ public class Usuario implements Serializable{
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
 	
+	/**
+	 * Relacion con varios prestamos de la base de datos
+	 */
 	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "usuario")
 	@JsonIgnore 
 	private List<Prestamo> prestamos;
 	
+	
+	
 	public Usuario() {
 		super();
 	}
-
 	public String getIdentificacion() {
 		return identificacion;
 	}
-
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
 	}
-
 	public List<Prestamo> getPrestamos() {
 		return prestamos;
 	}
-
 	public void setPrestamos(List<Prestamo> prestamos) {
 		this.prestamos = prestamos;
 	}
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
 	public String getNombres() {
 		return nombres;
 	}
-
 	public void setNombres(String nombres) {
 		this.nombres = nombres;
 	}
-
 	public String getApellidos() {
 		return apellidos;
 	}
-	
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
-
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-
-	
 	public String getSector() {
 		return sector;
 	}
-
 	public void setSector(String sector) {
 		this.sector = sector;
 	}
-
 	public String getClave() {
 		return clave;
 	}
-
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-
-
 	private static final long serialVersionUID = 1L;
 
 }

@@ -22,14 +22,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let prestamo of prestamos,let i = index" >
-            <td *ngIf="prestamo.estado">{{prestamo.id}}</td>
-            <td *ngIf="prestamo.estado">{{prestamo.fechaPrestamo| date: 'dd/MM/yyyy'}}</td>
-            <td *ngIf="prestamo.estado">{{prestamo.libros[0].nombre}}</td>
-            <td *ngIf="prestamo.estado">{{prestamo.usuario.nombres}}</td>
-            <td *ngIf="prestamo.estado">prestamo activo</td>
-            <td *ngIf="prestamo.estado">{{prestamo.usuario.sector}}</td>
-            <td *ngIf="prestamo.estado">{{diasEntre(prestamo.fechaPrestamo)}}</td>
-            <td *ngIf="prestamo.estado"><button (click)="devolverLibro(prestamo)" class="btn btn-success btn-sm">devolver libro</button></td>
+            <td>{{prestamo.id}}</td>
+            <td>{{prestamo.fechaPrestamo| date: 'dd/MM/yyyy'}}</td>
+            <td>{{prestamo.libros[0].nombre}}</td>
+            <td>{{prestamo.usuario.nombres}}</td>
+            <td>prestamo activo</td>
+            <td>{{prestamo.usuario.sector}}</td>
+            <td>{{diasEntre(prestamo.fechaPrestamo)}}</td>
+            <td><button (click)="devolverLibro(prestamo)" class="btn btn-success btn-sm">devolver libro</button></td>
           </tr>
         </tbody>
       </table>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="col-4">
-          <h6>total de prestados : {{totalPrestamos}}</h6>
+          <h6>total libros prestados : {{totalPrestamos}}</h6>
       </div>
     </div>
   </div>

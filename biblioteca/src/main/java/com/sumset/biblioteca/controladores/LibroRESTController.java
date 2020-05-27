@@ -22,25 +22,33 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sumset.biblioteca.modelos.entidades.Libro;
 import com.sumset.biblioteca.modelos.servicios.ILibroServices;
 
+/**
+ * servicio Rest que utiliza los servicios del repositorio libro
+ * @author Mateo Henao
+ */
 @CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/biblioteca")
 public class LibroRESTController {
 	
+	//inyectamos el servicio de libros
 	@Autowired
 	private ILibroServices libroServicio;
 	
+	/**
+	 * Servicio POST para realizar el registro de un libro en la base de datos
+	 * @param libro
+	 * @param result
+	 */
 	@PostMapping("/libros")
 	public ResponseEntity<?> crearLibro(@Valid @RequestBody Libro libro,BindingResult result)
 	{
 		Libro nuevoLibro = null;
 		Map<String, Object> response  = new HashMap<>();
-		if(result.hasErrors())
-		{
-		 List<String> errors = result.getFieldErrors()
-				 .stream().map(err->{
+		if(result.hasErrors()){
+		 List<String> errors = result.getFieldErrors().stream().map(err->{
 					 return "El campo"+err.getField()+" "+err.getDefaultMessage();
-				 }).collect(Collectors.toList());
+			 }).collect(Collectors.toList());
 		 response.put("errors", errors);
 		 return new ResponseEntity<Map<String, Object>>(response,HttpStatus.BAD_REQUEST);
 		}
@@ -52,11 +60,14 @@ public class LibroRESTController {
 			response.put("mensaje", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		response.put("mensaje", "publicacion creado con exito");
-		response.put("usuario", nuevoLibro);
+		response.put("mensaje", "libro creado con exito");
+		response.put("libro", nuevoLibro);
 		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.CREATED);
 	}
 	
+	/**
+	 * Servicio GET para obtener todos los libros registrados en la base de datos
+	 */
 	@GetMapping("/libros/todos")
 	public List<Libro> libros(){
 		return libroServicio.findAllLibros();

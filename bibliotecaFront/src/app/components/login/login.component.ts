@@ -12,18 +12,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  //credenciales para realizar el loggeo del usuario
   credenciales:Credenciales;
   
   constructor(private service:BibliotecaServices,private route:Router) { }
 
   ngOnInit() {
     this.credenciales=new Credenciales();
+    //validacion si el usuario ya se encuentra loggeado
     if(this.service.usuario){
       Swal.fire('debe cerrar sesion antes','','info')
       this.route.navigate(['/inicio'])
     }
   }
 
+  //metodo que permite al usuario loggearse en la aplicacion y asi poder solicitar libros
   login(){
    this.service.loginUsuario(this.credenciales.identificacion,this.credenciales.clave).subscribe(res=>{
      if(res){

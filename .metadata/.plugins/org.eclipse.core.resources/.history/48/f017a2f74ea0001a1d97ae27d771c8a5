@@ -1,0 +1,50 @@
+package com.sumset.biblioteca.modelos.implementaciones;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.sumset.biblioteca.modelos.dao.IPrestamoDao;
+import com.sumset.biblioteca.modelos.entidades.Prestamo;
+import com.sumset.biblioteca.modelos.servicios.IPrestamoServices;
+
+/**
+ * servicio que implementa los servicios de la interfaz y el repositorio por defecto de la entiad prestamo
+ * @author Mateo Henao
+ */
+@Service
+public class PrestamoServicesImplement implements IPrestamoServices{
+
+	
+	@Autowired
+	private IPrestamoDao prestamoDao;
+	
+	@Override
+	public Prestamo findById(Long id) {
+		return prestamoDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public Prestamo save(Prestamo prestamo) {
+		return prestamoDao.save(prestamo);
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Prestamo> findAllPrestamos() {
+		return prestamoDao.findAllPrestamos();
+	}
+
+	@Override
+	public int cantidadLibrosPrestados() {
+		return prestamoDao.cantidadLibrosPrestados();
+	}
+
+	@Override
+	public int cantidadLibrosPrestadosSector(String sector) {
+		return prestamoDao.cantidadLibrosPrestadosSector(sector);
+	}
+
+}

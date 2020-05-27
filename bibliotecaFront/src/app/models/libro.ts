@@ -1,3 +1,4 @@
+//modelo que representa libros en en front
 export class Libro{
    id:number;
    autor:string;

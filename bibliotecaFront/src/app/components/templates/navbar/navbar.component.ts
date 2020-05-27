@@ -11,7 +11,6 @@ export class NavbarComponent implements OnInit {
   constructor(public service:BibliotecaServices) { }
 
   ngOnInit() {
-    console.log(this.service.usuario)
   }
 
 }
