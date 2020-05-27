@@ -4136,3 +4136,54 @@ Binding(COMMAND+SHIFT+T,
 
 !ENTRY org.eclipse.ui 2 2 2020-05-27 15:48:09.042
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:10.181
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:10.182
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@222abb8f[org.springframework.tooling.boot.ls:1.17.0.202004200519(id=630)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:10.192
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:10.261
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:20.995
+!MESSAGE Boot LS startup time from start to initialized: 10790ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.154
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.LrKlKlSCisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.158
+!MESSAGE Creating project sorter...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.159
+!MESSAGE Creating project sorter... DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.163
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.166
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.167
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.169
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.170
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.LrKlKlSC => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.204
+!MESSAGE classpath=110 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.206
+!MESSAGE buffering callback sts4.classpath.LrKlKlSC biblioteca false 110
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.207
+!MESSAGE executing callback sts4.classpath.LrKlKlSC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-27 15:58:21.288
+!MESSAGE executing callback sts4.classpath.LrKlKlSC SUCCESS [done]
