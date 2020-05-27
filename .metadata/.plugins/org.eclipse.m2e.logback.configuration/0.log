@@ -3447,3 +3447,31 @@ org.eclipse.debug.core.DebugException: Launch configuration bibliotecaBackend - 
 2020-05-27 14:42:20,500 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-05-27 14:42:20,502 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-05-27 14:42:20,503 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/teohenao/Documents/universidad/sumset/biblioteca/src/test/resources
+2020-05-27 15:47:35,851 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-05-27 15:48:15,410 [Worker-10: Launching Executing clean in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/teohenao/Documents/universidad/sumset/biblioteca
+2020-05-27 15:48:15,416 [Worker-10: Launching Executing clean in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2020-05-27 15:48:22,255 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:22,268 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:48:22,288 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:48:22,309 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:22,309 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/teohenao/Documents/universidad/sumset/biblioteca/src/test/resources
+2020-05-27 15:48:22,354 [Worker-5: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of biblioteca
+2020-05-27 15:48:22,354 [Worker-5: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for biblioteca
+2020-05-27 15:48:22,381 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:40,998 [Worker-4: Launching Executing clean in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/teohenao/Documents/universidad/sumset/biblioteca
+2020-05-27 15:48:40,998 [Worker-4: Launching Executing clean in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2020-05-27 15:48:44,377 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:44,385 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:48:44,388 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:48:44,396 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:44,397 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/teohenao/Documents/universidad/sumset/biblioteca/src/test/resources
+2020-05-27 15:48:44,399 [Worker-2: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of biblioteca
+2020-05-27 15:48:44,399 [Worker-2: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for biblioteca
+2020-05-27 15:48:44,406 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:48:56,098 [Worker-5: Launching Executing install in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/teohenao/Documents/universidad/sumset/biblioteca
+2020-05-27 15:48:56,099 [Worker-5: Launching Executing install in _Users_teohenao_Documents_universidad_sumset_biblioteca] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install -Dstyle.color=always
+2020-05-27 15:49:42,079 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:49:42,080 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:49:42,082 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-27 15:49:42,088 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-27 15:49:42,088 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/teohenao/Documents/universidad/sumset/biblioteca/src/test/resources
